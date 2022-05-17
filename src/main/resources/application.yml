@@ -1,0 +1,26 @@
+server:
+  port: 8888
+spring:
+  redis:
+    host: 192.168.106.134
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    database: 0
+  datasource:
+    url: jdbc:mysql://localhost:3306/pvr?characterEncoding=utf8&useSSL=true
+    username: root
+    password: lldeai0221
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+      dialect:
+        org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
