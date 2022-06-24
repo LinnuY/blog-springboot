@@ -1,6 +1,8 @@
 server:
-  port: 8888
+  port: 8001
 spring:
+  application:
+    name: blog
   redis:
     host: 192.168.106.134
     port: 6379
@@ -12,7 +14,7 @@ spring:
         min-idle: 0
     database: 0
   datasource:
-    url: jdbc:mysql://localhost:3306/pvr?characterEncoding=utf8&useSSL=true
+    url: jdbc:mysql://localhost:3306/blog?characterEncoding=utf8&useSSL=true
     username: root
     password: lldeai0221
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -24,3 +26,8 @@ spring:
       dialect:
         org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
+    open-in-view: true
+  servlet:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB

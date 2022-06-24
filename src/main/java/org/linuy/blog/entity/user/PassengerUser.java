@@ -1,14 +1,26 @@
 package org.linuy.blog.entity.user;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import java.util.Date;
 
 /**
  * @author LongTeng
  * @date 2022/05/10
  **/
-public class PassengerUser extends BaseUser{
+@Entity
+@Getter
+@Setter
+public class PassengerUser extends BaseUser {
+
+    @Column
     private Long sessionId;
+    @Column
     private Date lastLoginTime;
-    private String lastLoginIPAddress;
+    @Column
+    private String lastLoginIpAddress;
 
 }
